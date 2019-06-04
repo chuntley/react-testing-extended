@@ -6,9 +6,10 @@
   "author": "Chad Huntley <chadhuntley@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "babel src --out-dir dist --ignore '**/__tests__/**' --delete-dir-on-start",
     "test": "jest",
-    "prepare" : "yarn build"
+    "prepare" : "yarn build",
+    "prepublishOnly": "npm test"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
